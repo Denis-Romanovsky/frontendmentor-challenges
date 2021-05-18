@@ -1,0 +1,305 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;600&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Spartan", sans-serif;
+  font-size: 15px;
+}
+
+.wrapper {
+  margin: auto 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+body {
+  position: relative;
+}
+
+.bg-image-top {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 500px;
+}
+.bg-image-top .mobile {
+  width: 100%;
+}
+.bg-image-top .desktop {
+  display: none;
+}
+
+.bg-image-bottom {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}
+.bg-image-bottom .mobile {
+  display: block;
+  width: 1000px;
+  max-height: 500px;
+}
+.bg-image-bottom .desktop {
+  display: none;
+}
+
+#top {
+  padding-top: 3rem;
+  padding-bottom: 1.5rem;
+  text-align: center;
+}
+#top .top-heading .heading {
+  font-size: 30px;
+  padding: 1.5rem 2rem;
+  color: #502050;
+  letter-spacing: -1.5px;
+  line-height: 1.9rem;
+}
+#top .top-heading .top-heading-description {
+  font-size: 15px;
+  padding: 0.5rem 0.15rem;
+  color: #937b92;
+  font-weight: 500;
+  letter-spacing: -0.03rem;
+  line-height: 1.5rem;
+}
+#top .top-ratings {
+  margin-top: 2rem;
+}
+#top .top-ratings .rating-block {
+  background-color: #f7f2f7;
+  padding: 1rem 0;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem 0;
+}
+#top .top-ratings .rating-block:first-child {
+  margin-top: 2rem;
+}
+#top .top-ratings .rating-block:last-child {
+  margin-bottom: 2.5rem;
+}
+#top .top-ratings .rating-block .rating-block-star {
+  padding: 0.5rem 0;
+}
+#top .top-ratings .rating-block .rating-block-star .rating-star {
+  padding: 0 0.12rem;
+}
+#top .top-ratings .rating-block .rating-block-description {
+  color: #502050;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  font-size: 13px;
+}
+
+#main {
+  margin-bottom: 2rem;
+}
+#main .review-block {
+  background-color: #502050;
+  color: #f7f2f7;
+  letter-spacing: -0.03rem;
+  border-radius: 10px;
+  margin: 1rem 0;
+  padding: 2rem 2.25rem;
+}
+#main .review-block:first-child {
+  margin-top: 0rem;
+}
+#main .review-block .review-block-reviewer {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  grid-template-rows: 50px;
+  margin-top: 0.5rem;
+}
+#main .review-block .review-block-reviewer .reviewer-photo {
+  border-radius: 50%;
+  width: 80%;
+  grid-row: 1;
+}
+#main .review-block .review-block-reviewer .reviewer-name {
+  grid-row: 1;
+  padding: 0 0.75rem;
+  font-size: 13px;
+  font-weight: 700;
+  margin-top: 0.25rem;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+}
+#main .review-block .review-block-reviewer .reviewer-status {
+  grid-row: 2/3;
+  grid-column: 2/3;
+  margin-top: -2.25rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 13px;
+  color: #ee68a4;
+  white-space: nowrap;
+}
+#main .review-block .review-text {
+  margin-top: 1rem;
+  letter-spacing: -0.25px;
+  font-size: 13px;
+  line-height: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 0.25rem;
+}
+
+@media screen and (min-width: 650px) {
+  .wrapper {
+    margin-left: 5rem;
+    margin-right: 5rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .wrapper {
+    margin-left: 5rem;
+    margin-right: 5rem;
+  }
+
+  .bg-image-top {
+    width: 50%;
+  }
+}
+@media screen and (min-width: 900px) {
+  body {
+    height: 100vh;
+  }
+
+  .bg-image-top {
+    top: 0px;
+    left: 0px;
+    width: 100%;
+  }
+  .bg-image-top .mobile {
+    display: none;
+  }
+  .bg-image-top .desktop {
+    display: block;
+    width: 40%;
+  }
+
+  .bg-image-bottom {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+  }
+  .bg-image-bottom .mobile {
+    display: none;
+  }
+  .bg-image-bottom .desktop {
+    display: block;
+    max-width: 1300px;
+    max-height: 800px;
+  }
+}
+@media screen and (min-width: 1065px) {
+  .wrapper {
+    margin-left: 8rem;
+    margin-right: 8rem;
+  }
+
+  #top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: end;
+    margin-top: 6rem;
+  }
+  #top .top-heading {
+    text-align: left;
+  }
+  #top .top-heading .heading {
+    font-size: 40px;
+    line-height: 3rem;
+    letter-spacing: -3px;
+    padding: 1.5rem 0 0.25rem 0;
+    margin-right: 8rem;
+  }
+  #top .top-heading .top-heading-description {
+    margin-right: 3rem;
+    padding: 0 0.15rem;
+    margin-top: 1rem;
+  }
+  #top .top-ratings {
+    margin-top: 0.5rem;
+  }
+  #top .top-ratings .rating-block {
+    flex-direction: row;
+    align-items: center;
+    padding: 0.5rem 0;
+    min-width: 440px;
+  }
+  #top .top-ratings .rating-block .rating-block-star {
+    margin-left: 1.5rem;
+    margin-top: 0.25rem;
+  }
+  #top .top-ratings .rating-block .rating-block-description {
+    padding: 0 1.25rem;
+    margin-left: 0.75rem;
+    margin-top: 0.2rem;
+    font-size: 15px;
+    font-weight: 700;
+  }
+
+  #main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 3rem;
+    margin-top: 3rem;
+  }
+  #main .review-block {
+    max-width: 400px;
+  }
+  #main .review-block:nth-child(2) {
+    margin: 0;
+    transform: translateY(7%);
+  }
+  #main .review-block:nth-child(3) {
+    margin: 0;
+    transform: translateY(14%);
+  }
+}
+@media screen and (min-width: 1130px) {
+  #top .top-ratings {
+    margin-top: 0.5rem;
+  }
+}
+@media screen and (min-width: 1300px) {
+  .wrapper {
+    max-width: 1150px;
+    margin: auto;
+  }
+
+  #top .top-heading {
+    margin-right: 4rem;
+  }
+  #top .top-heading .heading {
+    font-size: 50px;
+    line-height: 3.5rem;
+  }
+  #top .top-ratings .rating-block:nth-child(1) {
+    transform: translateX(-20%);
+  }
+  #top .top-ratings .rating-block:nth-child(2) {
+    transform: translateX(-10%);
+  }
+}
+@media screen and (min-width: 1530px) {
+  #top .top-heading {
+    margin-right: 2rem;
+  }
+  #top .top-heading .heading {
+    font-size: 50px;
+    line-height: 3.5rem;
+  }
+  #top .top-heading .top-heading-description {
+    margin-right: 5rem;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

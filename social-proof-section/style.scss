@@ -1,0 +1,362 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;600&display=swap');
+
+// Colors
+
+// Primary colors
+$dark-magenta: hsl(300, 43%, 22%);
+$soft-pink: hsl(333, 80%, 67%);
+
+// Secondary colors
+$dark-gray-magenta: hsl(303, 10%, 53%);
+$light-gray-magenta: hsl(300, 24%, 96%);
+$white: hsl(0, 0%, 100%);
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Spartan", sans-serif;
+  font-size: 15px;
+}
+
+.wrapper {
+  margin: auto 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+body {
+  position: relative;
+  // height: 100%;
+}
+
+.bg-image-top {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 500px;
+  // width: 50vw; // For Desktop Layout (min-width: 450px)
+
+  .mobile {
+    width: 100%;
+  }
+
+  .desktop { display: none; }
+}
+
+.bg-image-bottom {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+
+  .mobile {
+    display: block;
+    width: 1000px;
+    max-height: 500px;
+    // background-color: royalblue;
+  }
+
+
+  .desktop { display: none; }
+}
+
+
+#top {
+  padding-top: 3rem;
+  padding-bottom: 1.5rem;
+  text-align: center;
+  .top-heading {
+    .heading {
+      font-size: 30px;
+      padding: 1.5rem 2rem;
+      color: $dark-magenta;
+      letter-spacing: -1.5px;
+      line-height: 1.9rem;
+    }
+
+    .top-heading-description {
+      font-size: 15px;
+      padding: .5rem .15rem;
+      color: $dark-gray-magenta;
+      font-weight: 500;
+      letter-spacing: -.03rem;
+      line-height: 1.5rem;
+    }
+  }
+
+  .top-ratings {
+    margin-top: 2rem;
+
+    .rating-block {
+      background-color: $light-gray-magenta;
+      padding: 1rem 0;
+      border-radius: 5px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 1rem 0;
+
+      &:first-child { margin-top: 2rem; }
+      &:last-child { margin-bottom: 2.5rem; }
+
+      .rating-block-star {
+        padding: .5rem 0;
+
+        .rating-star { padding: 0 .12rem; }
+      }
+
+      // Rated 5 Stars in Report Guru
+      .rating-block-description {
+        color: $dark-magenta;
+        font-weight: 700;
+        letter-spacing: -.3px;
+        font-size: 13px; // 15px
+      }
+    }
+  }
+}
+
+#main {
+  margin-bottom: 2rem;
+  .review-block {
+    background-color: $dark-magenta;
+    color: $light-gray-magenta;
+    letter-spacing: -.03rem;
+    border-radius: 10px;
+    margin: 1rem 0;
+    padding: 2rem 2.25rem;
+
+    &:first-child { margin-top: 0rem; }
+
+    .review-block-reviewer {
+      display: grid;
+      grid-template-columns: 50px 1fr;
+      grid-template-rows: 50px;
+      margin-top: .5rem;
+
+      .reviewer-photo {
+        border-radius: 50%;
+        width: 80%;
+        grid-row: 1;
+      }
+
+      .reviewer-name {
+        grid-row: 1;
+        padding: 0 .75rem;
+        font-size: 13px;
+        font-weight: 700;
+        margin-top: .25rem;
+        letter-spacing: .2px;
+        white-space: nowrap;
+      }
+
+      .reviewer-status {
+        grid-row: 2 / 3;
+        grid-column: 2 / 3;
+        margin-top: -2.25rem;
+        padding: .5rem .75rem;
+        font-size: 13px;
+        color: $soft-pink;
+        white-space: nowrap;
+      }
+    }
+
+    .review-text {
+      margin-top: 1rem;
+      letter-spacing: -.25px;
+      font-size: 13px;
+      line-height: 1.5rem;
+      font-weight: 400;
+      margin-bottom: .25rem;
+    }
+  }
+}
+
+
+
+// ----------------- Tablets -----------------
+
+// Increase margin of the wrapper
+@media screen and (min-width: 650px) {
+  .wrapper {
+    margin-left: 5rem;
+    margin-right: 5rem;
+  }
+}
+
+// Resize bg-image to make the transition from mobile to desktop seamless
+@media screen and (min-width: 768px) {
+  .wrapper {
+    margin-left: 5rem;
+    margin-right: 5rem;
+  }
+
+  .bg-image-top {
+    width: 50%; // For Desktop Layout (min-width: 450px)
+  }
+}
+
+@media screen and (min-width: 900px) {
+  body { height: 100vh; }
+
+  .bg-image-top {
+    top: 0px;
+    left: 0px;
+    width: 100%; // 35%
+
+    .mobile { display: none; }
+    .desktop {
+      display: block;
+      width: 40%;
+    }
+  }
+
+  .bg-image-bottom {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+
+    .mobile { display: none; }
+
+    .desktop {
+      display: block;
+      max-width: 1300px;
+      max-height: 800px;
+    }
+  }
+}
+
+
+// Desktop
+@media screen and (min-width: 1065px) {
+  .wrapper {
+    margin-left: 8rem;
+    margin-right: 8rem;
+  }
+
+  #top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: end;
+    margin-top: 6rem;
+
+    .top-heading {
+      text-align: left;
+
+      .heading {
+        font-size: 40px;
+        line-height: 3rem;
+        letter-spacing: -3px;
+        padding: 1.5rem 0 .25rem 0;
+        margin-right: 8rem;
+      }
+
+      .top-heading-description {
+        margin-right: 3rem;
+        padding: 0 0.15rem;
+        margin-top: 1rem;
+      }
+    };
+
+    .top-ratings {
+      margin-top: .5rem;
+
+      .rating-block {
+        flex-direction: row;
+        align-items: center;
+        padding: .5rem 0;
+        min-width: 440px;
+
+        .rating-block-star {
+          margin-left: 1.5rem;
+          margin-top: .25rem;
+        }
+
+        .rating-block-description {
+          padding: 0 1.25rem;
+          margin-left: .75rem;
+          margin-top: .2rem;
+          font-size: 15px;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+
+  #main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 3rem;
+    margin-top: 3rem;
+
+    .review-block {
+      max-width: 400px;
+
+      &:nth-child(2) {
+        margin: 0;
+        transform: translateY(7%);
+      }
+
+      &:nth-child(3) {
+        margin: 0;
+        transform: translateY(14%);
+      }
+    }
+  }
+}
+
+
+@media screen and (min-width: 1130px) {
+  #top {
+    .top-ratings { margin-top: .5rem; }
+  }
+}
+
+
+// Create actual container with margin auto
+@media screen and (min-width: 1300px) {
+  .wrapper {
+    max-width: 1150px;
+    margin: auto;
+  }
+
+  // Increase distance between grid chldren
+  #top {
+    .top-heading {
+      margin-right: 4rem;
+      .heading {
+        font-size: 50px;
+        line-height: 3.5rem;
+      }
+    }
+
+    // Add stairs like layout to rating blocks
+    .top-ratings {
+      .rating-block {
+        &:nth-child(1) { transform: translateX(-20%); }
+        &:nth-child(2) { transform: translateX(-10%); }
+      }
+    }
+  }
+}
+
+
+
+// Final desktop style
+@media screen and (min-width: 1530px) {
+  #top {
+    .top-heading {
+      margin-right: 2rem;
+      .heading {
+        font-size: 50px;
+        line-height: 3.5rem;
+      }
+
+      .top-heading-description { margin-right: 5rem; }
+    }
+  }
+}
